@@ -1,6 +1,6 @@
 # Get the directory of the current script (AddCustomDirectory.ps1)
 $currentScriptDirectory = Split-Path -Parent $MyInvocation.MyCommand.Definition
-$mainScriptPath = Join-Path -Path $currentScriptDirectory -ChildPath "clean.ps1"
+$mainScriptPath = Join-Path -Path $currentScriptDirectory -ChildPath "Computer Cleaner Tool.ps1"
 
 # Function to add custom directory to the main script
 function Add-CustomDirectory {
@@ -15,7 +15,7 @@ function Add-CustomDirectory {
 
         # Check if the directory path already exists in the script content
         if ($scriptContent -match [regex]::Escape("Remove-Files -Path `"$directory\*`"")) {
-            Write-Host "The directory '$directory' is already added to clean.ps1." -ForegroundColor Yellow
+            Write-Host "The directory '$directory' is already added to the Computer Cleaner Tool." -ForegroundColor Yellow
             return
         }
 
